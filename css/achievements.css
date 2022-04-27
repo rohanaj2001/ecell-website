@@ -1,0 +1,109 @@
+:root {
+    --hexagonBackground: rgba(19, 19, 19, 0.9);
+    --hexagonWidth : 15.625vw;
+}
+
+.body {
+    margin: 0%;
+    padding: 0%;
+
+}
+.navbar{
+    height: 15%;
+    background: transparent;
+    z-index: 2;
+}
+.box{
+    margin: 0%;
+    padding: 0%;
+    height: 100vh;
+    width: 100%;
+    background-image:  url(../images/bgImage.jpg);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 100%;
+    overflow-y: scroll;
+}
+
+.containerMain {
+    height: 85%;
+    width: 100%;
+
+   
+}
+.achievementsMainBox{
+    width: 80%;
+    height: calc((var(--hexagonWidth)*0.57735)*2);
+    
+}
+.contentBox{
+    height: fit-content;
+    margin: auto;
+    padding: 0%;
+    width: 80%;
+    /* background-color: rgb(205, 204, 204); */
+}
+.achievementsContentBox{
+    width: 80%;
+    height: fit-content;
+    margin-top: 15vh;
+    padding: 1%;
+    /* background: rgb(41, 40, 40); */
+    height: auto;
+    
+
+}
+.hexagon {
+    width: var(--hexagonWidth);
+    height: auto;
+    background: rgba(19, 19, 19, 0.9);
+    position: relative;
+    aspect-ratio: 100 / 57.735;
+}
+
+.hexagon::before {
+    content: "";
+    position: absolute;
+    top: calc(-1*(var(--hexagonWidth)*0.57735)/2);
+    left: 0;
+    width: 0;
+    height: 0;
+    border-left:  calc(var(--hexagonWidth)/2) solid transparent;
+    border-right:  calc(var(--hexagonWidth)/2) solid transparent;
+    border-bottom: calc(var(--hexagonWidth)*0.57735/2) solid rgba(19, 19, 19, 0.9);
+    ;
+}
+
+.hexagon::after {
+    content: "";
+    position: absolute;
+    bottom: calc(-1*var(--hexagonWidth)*0.57735/2);
+    left: 0;
+    width: 0;
+    height: 0;
+    border-left:  calc(var(--hexagonWidth)/2) solid transparent;
+    border-right:  calc(var(--hexagonWidth)/2) solid transparent;
+    border-top: calc(var(--hexagonWidth)*0.57735/2) solid rgba(19, 19, 19, 0.9);
+}
+.hexagon a{
+    cursor: pointer;
+    text-decoration: none;
+    font-size: large;
+    
+}
+.hexagon a:hover{
+    font-size: larger;
+    
+}
+.left{
+    height: 100%;
+    width: 50%;
+    /* border-right: 1px solid red; */
+    /* background: blue; */
+}
+.right{
+    height: 100%;
+    width: 50%;
+    border-left: 1px solid red;
+    /* background-color: #fff; */
+}
