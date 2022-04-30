@@ -8,11 +8,75 @@
     padding: 0%;
 
 }
-.navbar{
-    height: 15%;
-    background: transparent;
-    z-index: 2;
+
+
+:root {
+    --posterFont: 'Kumbh Sans', sans-serif;
+    --navFont: 'Inter', sans-serif;
+    --red:#FF0000;
+    --creme:#F4E3C7;
 }
+ul{
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+}
+nav{
+    z-index: 1;
+    padding-left: 4em;
+    top: 0;
+    /* position: fixed; */
+    font-style: normal;
+    font-weight: 410;
+    font-size: 0.85em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    box-shadow: inset 0px -1px 0px #C4C4C4;
+    background: rgba(255, 255, 255, 0.8);
+}
+
+nav>ul{
+    margin: 0.5em, auto;
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li{
+    margin:0.8em;
+}
+
+nav a{
+    text-decoration: none;
+}
+
+nav a.active{
+    background-color: var(--creme);
+    border-radius: 80px;
+    padding: 0.5em 0.7em;
+}
+
+nav .logo{
+    margin-bottom: 0.2em;
+}
+
+nav div img{
+    width: 1.2em;
+    margin:auto 2.5em;
+}
+
+.left-nav{
+    display: flex;
+    flex-wrap: wrap;
+    order:0;
+}
+
+.right-nav{
+    display: flex;
+    flex-wrap: wrap;
+    order:2;
+}
+
 .box{
     margin: 0%;
     padding: 0%;
