@@ -7,9 +7,11 @@
     --hexagonWidth: 15.625vw;
     --grey: rgb(187, 187, 187)
 }
+
 .body {
     margin: 0%;
     padding: 0%;
+    font-family: var(--navFont);
 
 }
 
@@ -131,14 +133,14 @@ a.active:hover {
 
 .contentBox {
     height: fit-content;
-    margin: auto;
+    margin: aut0;
     padding: 0%;
     width: 90%;
     /* border: #BC985F 1px solid; */
     /* background-color: rgb(205, 204, 204); */
 }
 
-.achievementsContentBox{
+.achievementsContentBox {
     width: 90%;
     height: fit-content;
     /* margin-top: 10%; */
@@ -172,7 +174,8 @@ a.active:hover {
 
 
 }
-.hexagonSmall{
+
+.hexagonSmall {
     position: relative;
     width: 5vw;
     aspect-ratio: 100/ 57.735;
@@ -205,13 +208,13 @@ a.active:hover {
 }
 
 .hexagonBorder::before {
-border-radius: 5px 0;
+    border-radius: 5px 0;
     border-left: 2px solid var(--red);
     border-right: 2px solid var(--red);
 }
 
 .hexagonBorder::after {
-border-radius: 0 5px;
+    border-radius: 0 5px;
     border-left: 2px solid var(--red);
     border-right: 2px solid var(--red);
 }
@@ -225,7 +228,7 @@ border-radius: 0 5px;
 
 }
 
-.hexLinks:hover{
+.hexLinks:hover {
     font-size: 1.3em;
     color: var(--creme);
 
@@ -247,7 +250,7 @@ border-radius: 0 5px;
 
 .achievementsContentBox .card {
     background: transparent;
-    margin: 5% auto;
+    margin: 5% 0;
     border: 0;
 }
 
@@ -266,14 +269,15 @@ border-radius: 0 5px;
     width: 50%;
     border-left: 2px solid var(--grey);
 }
-hr.hr1{
-    clear:both;
-    display:block;
+
+hr.hr1 {
+    clear: both;
+    display: block;
     width: 20%;
     color: var(--red);
     height: 1px;
     z-index: 2;
-    }
+}
 
 @media all and (max-width: 700px) {
 
@@ -285,9 +289,31 @@ hr.hr1{
     .achievementsContentBox div {
         border: none;
     }
-
+    .hexagon{
+        width: 20vw;
+    }
+    .hexagonBorder{
+        width: 25vw;
+    }
+    .hexagonSmall{
+        display: none;
+    }
     .hexLinks {
+        font-size: 0.5em;
+    }
+    .hexLinks:hover {
         font-size: 0.6em;
     }
+    .greyBorder{
+        display: none;
+    }
+    .achievementsContentBox{
+        border-bottom: var(--creme) solid 1px;
+        margin-bottom: 50px;
+    }
+    .hexagonSmall{
+        width: 0%;
+    }
+    
 
 }

@@ -4,7 +4,7 @@ var events = document.getElementById('events')
 var contentBox = document.getElementById('contentBox')
 var contentHeading = document.getElementById('contentHeading')
 function startupsFn() {
-    contentHeading.innerText="STARTUPS"
+    contentHeading.innerText = "STARTUPS"
     contentBox.innerHTML = `<div class="greyBorder"><div></div></div> 
     <div class="achievementsContentBox p5 d-flex align-items-center justify-content-center ">
     <div class="left d-flex align-items-center justify-content-center flex-column">
@@ -110,7 +110,7 @@ window.addEventListener('load', startupsFn)
 startups.addEventListener('click', startupsFn)
 
 competitions.addEventListener('click', () => {
-    contentHeading.innerText="COMPETITIONS"
+    contentHeading.innerText = "COMPETITIONS"
     contentBox.innerHTML = `<div class="greyBorder"><div></div></div> 
 <div class="achievementsContentBox p5 d-flex align-items-center justify-content-center">
     <div class="left d-flex align-items-center justify-content-center flex-column">
@@ -179,7 +179,7 @@ competitions.addEventListener('click', () => {
 })
 
 events.addEventListener('click', () => {
-    contentHeading.innerText="EVENTS"
+    contentHeading.innerText = "EVENTS"
     contentBox.innerHTML = `<div class="greyBorder"><div></div></div> 
     <div class="achievementsContentBox p5 d-flex align-items-center justify-content-center ">
     <div class="left d-flex align-items-center justify-content-center flex-column">
