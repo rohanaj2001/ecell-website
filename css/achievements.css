@@ -1,20 +1,16 @@
 :root {
-    --hexagonBackground: rgba(19, 19, 19);
-    --hexagonWidth: 15.625vw;
-}
-
-.body {
-    margin: 0%;
-    padding: 0%;
-
-}
-
-
-:root {
     --posterFont: 'Kumbh Sans', sans-serif;
     --navFont: 'Inter', sans-serif;
     --red: #FF0000;
     --creme: #BC985F;
+    --hexagonBackground: rgb(19, 19, 19);
+    --hexagonWidth: 15.625vw;
+    --grey: rgb(187, 187, 187)
+}
+.body {
+    margin: 0%;
+    padding: 0%;
+
 }
 
 ul {
@@ -23,10 +19,11 @@ ul {
 }
 
 nav {
-    z-index: 1;
+    /* position: fixed; */
+    z-index: 5;
     padding-left: 4em;
     top: 0;
-    /* position: fixed; */
+    left: 0;
     font-style: normal;
     font-weight: 410;
     font-size: 0.85em;
@@ -77,12 +74,27 @@ nav div img {
     order: 2;
 }
 
+.left-nav a,
+.right-nav a {
+    color: black;
+}
+
 .right-nav a:hover,
 .left-nav a:hover {
-    /* background-color: var(--creme);
+
+    /* border-top: var(--creme) 2px solid; */
+    color: var(--creme);
+}
+
+a.active {
+    background-color: var(--creme);
+    color: white;
     border-radius: 80px;
-    padding: 0.5em 0.7em; */
-    border-top: var(--creme) 2px solid;
+    padding: 0.5em 0.7em;
+}
+
+a.active:hover {
+    color: white;
 }
 
 .box {
@@ -95,6 +107,7 @@ nav div img {
     background-position: center center;
     background-size: 100%;
     overflow-y: scroll;
+    z-index: -1;
 }
 
 .containerMain {
@@ -103,15 +116,16 @@ nav div img {
 
 
 }
-.containerMain>.card{
+
+.containerMain>.card {
     margin-bottom: 100px;
 
 
 }
 
 .achievementsMainBox {
-    width: 100%;
-    height: fit-content;
+    width: 80%;
+    height: calc(40vw * 0.57735);
 
 }
 
@@ -124,11 +138,11 @@ nav div img {
     /* background-color: rgb(205, 204, 204); */
 }
 
-.achievementsContentBox {
+.achievementsContentBox{
     width: 90%;
     height: fit-content;
-    margin-top: 10%;
-    padding: 1%;
+    /* margin-top: 10%; */
+    padding: 0%;
     /* border: #FF0000 1px solid; */
     height: auto;
 
@@ -137,29 +151,39 @@ nav div img {
 
 .hexagonBorder {
     position: relative;
-    width: 25vw;
+    width: 20vw;
     aspect-ratio: 100/ 57.735;
+    border-radius: 5px;
     background: transparent;
     z-index: 1;
-    border-left: 1px solid red;
-    border-right: 1px solid red;
+    border-left: 2px solid var(--red);
+    border-right: 2px solid var(--red);
 }
 
 
 
 .hexagon {
     position: relative;
-    width: 20vw;
+    width: 15vw;
     aspect-ratio: 100/ 57.735;
     background: var(--hexagonBackground);
     z-index: 2;
+    opacity: 0.9;
 
 
+}
+.hexagonSmall{
+    position: relative;
+    width: 5vw;
+    aspect-ratio: 100/ 57.735;
+    background: var(--grey);
+    z-index: 2;
 
 }
 
 .hexagon::before,
-.hexagonBorder::before {
+.hexagonBorder::before,
+.hexagonSmall::before {
     content: '';
     position: absolute;
     background: inherit;
@@ -169,7 +193,8 @@ nav div img {
 }
 
 .hexagon::after,
-.hexagonBorder::after {
+.hexagonBorder::after,
+.hexagonSmall::after {
     content: '';
     position: absolute;
     background: inherit;
@@ -180,29 +205,29 @@ nav div img {
 }
 
 .hexagonBorder::before {
-    border-left: 1px solid red;
-    border-right: 1px solid red;
+border-radius: 5px 0;
+    border-left: 2px solid var(--red);
+    border-right: 2px solid var(--red);
 }
 
 .hexagonBorder::after {
-    border-left: 1px solid red;
-    border-right: 1px solid red;
+border-radius: 0 5px;
+    border-left: 2px solid var(--red);
+    border-right: 2px solid var(--red);
 }
 
-.hexagon a {
+.hexLinks {
     color: white;
     cursor: pointer;
     text-decoration: none;
-    font-size: 1.5em;
-    z-index: 2;
+    font-size: 1.1em;
+    z-index: 3;
 
 }
 
-a:hover {
-    font-size: 1.7em;
+.hexLinks:hover{
+    font-size: 1.3em;
     color: var(--creme);
-
-
 
 }
 
@@ -216,24 +241,52 @@ a:hover {
 .right {
     height: 100%;
     width: 50%;
-    border-left: 1px solid red;
+    border-left: 2px solid var(--red);
     /* background-color: #fff; */
 }
 
 .achievementsContentBox .card {
     background: transparent;
+    margin: 5% auto;
     border: 0;
 }
 
+.greyBorder {
+    position: relative;
+    height: 10vh;
+    width: 90%;
+    /* background-color: #333; */
+    z-index: 0;
+
+}
+
+.greyBorder div {
+    float: right;
+    height: 100%;
+    width: 50%;
+    border-left: 2px solid var(--grey);
+}
+hr.hr1{
+    clear:both;
+    display:block;
+    width: 20%;
+    color: var(--red);
+    height: 1px;
+    z-index: 2;
+    }
+
 @media all and (max-width: 700px) {
 
-    .achievementsContentBox{
+    .achievementsContentBox {
         flex-direction: column;
+        /* background-color: #333; */
     }
-    .achievementsContentBox div{
+
+    .achievementsContentBox div {
         border: none;
     }
-    .hexagon a{
+
+    .hexLinks {
         font-size: 0.6em;
     }
 
