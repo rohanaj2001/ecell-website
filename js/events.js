@@ -1,10 +1,31 @@
+// nav---------------------------------------
 
+
+function myFunction(x) {
+    x.classList.toggle("change");
+    let mobNavContent=document.getElementsByClassName("mob-nav-content")[0];
+    if(mobNavContent.classList.contains("show")){
+        mobNavContent.classList.remove("show");
+    }
+    else{
+        mobNavContent.classList.add("show");
+    }
+}
+
+
+
+
+// upcoming-posters----------------------------------------------------
 
 $(".u-poster").click(function(){
-    $(".active").removeClass("active");
+    $(" .active").removeClass("active");
     $(this).addClass("active");
 }) 
 
+
+
+
+// prev-posters----------------------------------------------------------
 
 $(".row1 .prev-poster").click(function(){
     $(".row1 .prev-poster").css('animation-play-state', 'paused');
@@ -32,21 +53,29 @@ $(".row2 .prev-poster").click(function(){
 
 
 
+
+// moments-------------------------------------------------------
+
+
+let isMobileDevice = window.matchMedia("only screen and (max-width: 700px)").matches;
+
 function createBubble() {
     const section = 
           document.querySelector("Section");
-    const createElement = 
-          document.createElement("span");
+    var createElement = 
+          document.createElement("div");
+    
     var size = Math.random() * 40;
 
     createElement.className="bubble";
 
     createElement.style.animation = 
-      "animation 28s linear infinite";
+      "animation 35s linear infinite";
     createElement.style.width = 70 + size + "px";
     createElement.style.height = 70 + size + "px";
     createElement.style.left = 
       Math.random() * innerWidth + "px";
+
 
     const image=document.createElement("img");
 
@@ -67,22 +96,39 @@ function createBubble() {
     "../images/eventsImages/moments images/photo_2022-04-30_00-04-27.jpg"];
 
 
+    let bubbleRemoveTime=14000;
+    let widthStyle=55 + size + "px";
+    
+
+    if(isMobileDevice){
+        console.log(true);
+        bubbleRemoveTime=5500;
+        widthStyle=25 + size + "px";
+        bubbleCreateTime=700;
+    }
+
+
+
     image.src=srcList[Math.floor(Math.random() * srcList.length)];
-    image.style.width=70 + size + "px";
-    image.style.height=70 + size + "px";
+    image.style.width=widthStyle;
+    image.style.height=widthStyle;
     createElement.appendChild(image);
     section.appendChild(createElement);
 
+    var background=document.getElementsByClassName("background")[0].getElementsByTagName('img')[0];
+    image.addEventListener("click", function() {
+        background.src=image.src;
+    });
 
-
+    
     setTimeout(() => {
         createElement.remove();
-    }, 12000);
+    }, bubbleRemoveTime);
 }
-setInterval(createBubble, 700);
 
-$(".bubble").click(function(){
-    console.log("clicked");
-})
+
+let bubbleCreateTime=1000;
+setInterval(createBubble, bubbleCreateTime);
+
 
 
