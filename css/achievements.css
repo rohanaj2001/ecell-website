@@ -107,7 +107,7 @@ a.active:hover {
     background-image: url(../images/bgImage.jpg);
     background-repeat: no-repeat;
     background-position: center center;
-    background-size: 100%;
+    background-size: cover;
     overflow-y: scroll;
     z-index: -1;
 }
