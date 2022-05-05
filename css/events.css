@@ -23,6 +23,7 @@ body{
 }
 
 nav{
+    transition: transform 0.5s linear;
     z-index: 1;
     padding-left: 4em;
     top: 0;
@@ -177,12 +178,16 @@ div.heading div{
     transition: width 0.5s, height 0.5s;
     height: 16em;
     border: 7px solid var(--creme);
+    transition: transform 0.5s;
 }
 
 .upcoming .active img{
-    width: 17em;
-    transition: width 0.5s, height 0.5s;
-    height: 21em;
+    width: 13em;
+    transform: scale(1.1,1.1);
+    pointer-events: none;
+    /* transition: width 0.5s, height 0.5s; */
+    
+    height: 16em;
     border: 3.5px solid var(--red);
 }
 
@@ -237,14 +242,24 @@ div.heading div{
     text-decoration: none;
 }
 
-.upcoming .active h6,.upcoming .active div.register{
+.upcoming .active div.register{
     opacity: 1;
-    transform: translate(0, 0);
+    transform: translate(0, 1em);
+}
+
+.upcoming .active h6{
+    opacity: 1;
+    transform: translate(0, -1em);
 }
 
 .upcoming .u-poster:hover > h6{
     opacity: 1;
     transform: translate(0, 0);
+}
+
+.upcoming .active:hover > h6{
+    opacity: 1;
+    transform: translate(0, -1em);
 }
 
 .upcoming .u-poster img:hover{
@@ -509,22 +524,9 @@ nav{
 }
 
 
-/* .mob-nav-content{
-    background-color: #ffffff;
-    position: relative;
-    display: block;
-    height: 0;
-    top:-40vh;
-} */
+
 
 .show{
-    /* position: relative; */
-    /* top: -200%; */
-    /* transform: translateY(40vh); */
-    /* min-height: 0; */
-    /* top: auto; */
-    /* height: fit-content; */
-    /* transition: transform 0.5s linear, height 0.5s linear; */
     display: block;
 }
 

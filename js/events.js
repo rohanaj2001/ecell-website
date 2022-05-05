@@ -12,7 +12,21 @@ function myFunction(x) {
     }
 }
 
+var prevScrollpos = window.pageYOffset;
+        window.onscroll = function() {
+            var currentScrollPos = window.pageYOffset;
+            console.log(currentScrollPos);
+            console.log(prevScrollpos);
+            if (prevScrollpos < currentScrollPos) {
+                $("nav").css("transform", "translateY(-100%)");
+            }
+            if (prevScrollpos > currentScrollPos) {
+                $("nav").css("transform", "translateY(0)");
+            }
+            prevScrollpos=currentScrollPos;
 
+        }
+      
 
 
 // upcoming-posters----------------------------------------------------
@@ -118,6 +132,7 @@ function createBubble() {
     var background=document.getElementsByClassName("background")[0].getElementsByTagName('img')[0];
     image.addEventListener("click", function() {
         background.src=image.src;
+        createElement.remove();
     });
 
     
