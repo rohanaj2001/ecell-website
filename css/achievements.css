@@ -8,13 +8,17 @@
     --grey: rgb(187, 187, 187)
 }
 
-.body {
-    margin: 0%;
-    padding: 0%;
+body{
+    margin: 0;
+    padding: 0;
+    background-image: url('../images/bgImage.jpg');
+    background-position: 100% 50%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
     font-family: var(--navFont);
-
+   
 }
-
 ul {
     margin-top: 0.5em;
     margin-bottom: 0.5em;
