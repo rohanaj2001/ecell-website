@@ -19,89 +19,8 @@ body{
     font-family: var(--navFont);
    
 }
-ul {
-    margin-top: 0.5em;
-    margin-bottom: 0.5em;
-}
 
-nav {
-    position: fixed;
-    z-index: 4;
-    padding-left: 4em;
-    top: 0;
-    left: 0;
-    font-style: normal;
-    font-weight: 410;
-    font-size: 0.85em;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    box-shadow: inset 0px -1px 0px #C4C4C4;
-    background: rgba(255, 255, 255, 0.8);
-}
-
-nav>ul {
-    margin: 0.5em, auto;
-    list-style: none;
-    padding: 0;
-}
-
-nav ul li {
-    margin: 0.8em;
-}
-
-nav a {
-    text-decoration: none;
-}
-
-
-
-nav .logo {
-    margin-bottom: 0.2em;
-}
-
-nav div img {
-    width: 1.2em;
-    margin: auto 2.5em;
-}
-
-.left-nav {
-    display: flex;
-    flex-wrap: wrap;
-    order: 0;
-}
-
-.right-nav {
-    display: flex;
-    flex-wrap: wrap;
-    order: 2;
-}
-
-.left-nav a,
-.right-nav a {
-    color: black;
-}
-
-.right-nav a:hover,
-.left-nav a:hover {
-
-    /* border-top: var(--creme) 2px solid; */
-    color: var(--creme);
-}
-
-a.active {
-    background-color: var(--creme);
-    color: white;
-    border-radius: 80px;
-    padding: 0.5em 0.7em;
-}
-
-a.active:hover {
-    color: white;
-}
-
-.box {
+/* .box {
     margin: 0%;
     padding: 0%;
     height: 100vh;
@@ -112,7 +31,7 @@ a.active:hover {
     background-size: cover;
     overflow-y: scroll;
     z-index: -1;
-}
+} */
 
 .containerMain {
     height: 85%;
@@ -122,7 +41,7 @@ a.active:hover {
 }
 
 .containerMain>.card {
-    margin-bottom: 100px;
+    margin: 50px 0px;
 
 
 }
@@ -171,7 +90,7 @@ a.active:hover {
     width: 15vw;
     aspect-ratio: 100/ 57.735;
     background: var(--hexagonBackground);
-    z-index: 2;
+    z-index: 1;
     opacity: 0.9;
 
 
@@ -182,7 +101,7 @@ a.active:hover {
     width: 5vw;
     aspect-ratio: 100/ 57.735;
     background: var(--grey);
-    z-index: 2;
+    z-index: 1;
 
 }
 
@@ -226,7 +145,7 @@ a.active:hover {
     cursor: pointer;
     text-decoration: none;
     font-size: 1.1em;
-    z-index: 3;
+    z-index: 1;
 
 }
 
@@ -272,14 +191,6 @@ a.active:hover {
     border-left: 2px solid var(--grey);
 }
 
-hr.hr1 {
-    clear: both;
-    display: block;
-    width: 20%;
-    color: var(--red);
-    height: 1px;
-    z-index: 2;
-}
 
 @media all and (max-width: 700px) {
 
@@ -301,10 +212,10 @@ hr.hr1 {
         display: none;
     }
     .hexLinks {
-        font-size: 0.5em;
+        font-size: 0.4em;
     }
     .hexLinks:hover {
-        font-size: 0.6em;
+        font-size: 0.5em;
     }
     .greyBorder{
         display: none;

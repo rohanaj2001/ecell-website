@@ -13,8 +13,6 @@ function myFunction(x) {
 var prevScrollpos = window.pageYOffset;
         window.onscroll = function() {
             var currentScrollPos = window.pageYOffset;
-            console.log(currentScrollPos);
-            console.log(prevScrollpos);
             if (prevScrollpos < currentScrollPos) {
                 $("nav").css("transform", "translateY(-100%)");
             }
