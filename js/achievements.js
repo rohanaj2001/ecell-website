@@ -1,3 +1,33 @@
+
+function myFunction(x) {
+    x.classList.toggle("change");
+    let mobNavContent=document.getElementsByClassName("mob-nav-content")[0];
+    if(mobNavContent.classList.contains("show")){
+        mobNavContent.classList.remove("show");
+    }
+    else{
+        mobNavContent.classList.add("show");
+    }
+}
+
+var prevScrollpos = window.pageYOffset;
+        window.onscroll = function() {
+            var currentScrollPos = window.pageYOffset;
+            console.log(currentScrollPos);
+            console.log(prevScrollpos);
+            if (prevScrollpos < currentScrollPos) {
+                $("nav").css("transform", "translateY(-100%)");
+            }
+            if (prevScrollpos > currentScrollPos) {
+                $("nav").css("transform", "translateY(0)");
+            }
+            prevScrollpos=currentScrollPos;
+
+        }
+      
+
+
+
 var startups = document.getElementById('startups')
 var competitions = document.getElementById('competitions')
 var events = document.getElementById('events')
