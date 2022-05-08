@@ -5,6 +5,7 @@
     --creme:#F4E3C7;
     --polaroidFont:  'Indie Flower', cursive;
     --polaroidImageWidth:40em;
+    --contentFont: 'Montserrat', sans-serif;
 }
 
 ul{
@@ -53,6 +54,10 @@ a{
     text-decoration: none;
     color: #161717;
 }
+
+/* nav a:hover{
+    color: var(--creme);
+} */
 
 nav a.highlight{
     background-color: var(--creme);
@@ -471,6 +476,10 @@ footer {
     /* top:180vh */
 }
 
+footer ul{
+    padding-left: 0;
+}
+
 footer ul li{
     list-style: none;
 }
@@ -517,6 +526,7 @@ footer .location h6{
 
 .top-footer ul li{
     line-height: 1.9em;
+    /* font-weight: 300; */
 }
 
 .top-footer h6{
