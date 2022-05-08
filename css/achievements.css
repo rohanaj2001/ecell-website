@@ -1,0 +1,232 @@
+:root {
+    --posterFont: 'Kumbh Sans', sans-serif;
+    --navFont: 'Inter', sans-serif;
+    --red: #FF0000;
+    --creme: #BC985F;
+    --hexagonBackground: rgb(19, 19, 19);
+    --hexagonWidth: 15.625vw;
+    --grey: rgb(187, 187, 187)
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    background-image: url('../images/achievementsImages/bgImage.jpg');
+    background-position: 100% 50%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    font-family: var(--navFont);
+   
+}
+
+/* .box {
+    margin: 0%;
+    padding: 0%;
+    height: 100vh;
+    width: 100%;
+    background-image: url(../images/bgImage.jpg);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    overflow-y: scroll;
+    z-index: -1;
+} */
+
+.containerMain {
+    height: 85%;
+    width: 100%;
+
+
+}
+
+.containerMain>.card {
+    margin: 50px 0px;
+
+
+}
+
+.achievementsMainBox {
+    width: 80%;
+    height: calc(40vw * 0.57735);
+
+}
+
+.contentBox {
+    height: fit-content;
+    margin: aut0;
+    padding: 0%;
+    width: 90%;
+    /* border: #BC985F 1px solid; */
+    /* background-color: rgb(205, 204, 204); */
+}
+
+.achievementsContentBox {
+    width: 90%;
+    height: fit-content;
+    /* margin-top: 10%; */
+    padding: 0%;
+    /* border: #FF0000 1px solid; */
+    height: auto;
+
+
+}
+
+.hexagonBorder {
+    position: relative;
+    width: 20vw;
+    aspect-ratio: 100/ 57.735;
+    border-radius: 5px;
+    background: transparent;
+    z-index: 1;
+    border-left: 2px solid var(--red);
+    border-right: 2px solid var(--red);
+}
+
+
+
+.hexagon {
+    position: relative;
+    width: 15vw;
+    aspect-ratio: 100/ 57.735;
+    background: var(--hexagonBackground);
+    z-index: 1;
+    opacity: 0.9;
+
+
+}
+
+.hexagonSmall {
+    position: relative;
+    width: 5vw;
+    aspect-ratio: 100/ 57.735;
+    background: var(--grey);
+    z-index: 1;
+
+}
+
+.hexagon::before,
+.hexagonBorder::before,
+.hexagonSmall::before {
+    content: '';
+    position: absolute;
+    background: inherit;
+    width: 100%;
+    height: 100%;
+    transform: rotate(60deg);
+}
+
+.hexagon::after,
+.hexagonBorder::after,
+.hexagonSmall::after {
+    content: '';
+    position: absolute;
+    background: inherit;
+    width: 100%;
+    height: 100%;
+    transform: rotate(-60deg);
+
+}
+
+.hexagonBorder::before {
+    border-radius: 5px 0;
+    border-left: 2px solid var(--red);
+    border-right: 2px solid var(--red);
+}
+
+.hexagonBorder::after {
+    border-radius: 0 5px;
+    border-left: 2px solid var(--red);
+    border-right: 2px solid var(--red);
+}
+
+.hexLinks {
+    color: white;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 1.1em;
+    z-index: 1;
+
+}
+
+.hexLinks:hover {
+    font-size: 1.3em;
+    color: var(--creme);
+
+}
+
+.left {
+    height: 100%;
+    width: 50%;
+    /* border-right: 1px solid red; */
+    /* background: blue; */
+}
+
+.right {
+    height: 100%;
+    width: 50%;
+    border-left: 2px solid var(--red);
+    /* background-color: #fff; */
+}
+
+.achievementsContentBox .card {
+    background: transparent;
+    margin: 5% 0;
+    border: 0;
+}
+
+.greyBorder {
+    position: relative;
+    height: 10vh;
+    width: 90%;
+    /* background-color: #333; */
+    z-index: 0;
+
+}
+
+.greyBorder div {
+    float: right;
+    height: 100%;
+    width: 50%;
+    border-left: 2px solid var(--grey);
+}
+
+
+@media all and (max-width: 700px) {
+
+    .achievementsContentBox {
+        flex-direction: column;
+        /* background-color: #333; */
+    }
+
+    .achievementsContentBox div {
+        border: none;
+    }
+    .hexagon{
+        width: 20vw;
+    }
+    .hexagonBorder{
+        width: 25vw;
+    }
+    .hexagonSmall{
+        display: none;
+    }
+    .hexLinks {
+        font-size: 0.4em;
+    }
+    .hexLinks:hover {
+        font-size: 0.5em;
+    }
+    .greyBorder{
+        display: none;
+    }
+    .achievementsContentBox{
+        border-bottom: var(--creme) solid 1px;
+        margin-bottom: 50px;
+    }
+    .hexagonSmall{
+        width: 0%;
+    }
+    
+
+}
