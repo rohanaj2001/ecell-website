@@ -24,7 +24,7 @@ body{
 
 nav{
     transition: transform 0.5s linear;
-    z-index: 1;
+    z-index: 3;
     padding-left: 4em;
     top: 0;
     position: fixed;
