@@ -35,12 +35,12 @@ a{
 }
 
 a:hover{
-    color: initial;
+    color: inherit;
 }
-
-nav a:hover{
+         
+/* nav a:hover{
     color: var(--creme);
-}
+} */
 
 ul{
     padding-left: 0;
@@ -49,7 +49,7 @@ ul{
 }
   
 nav{
-    transition: transform 0.5s linear;
+    transition: background-color 0.1s linear, transform 0.5s linear;
     color: white;
     z-index: 2;
     padding-left: 4em;
@@ -63,7 +63,7 @@ nav{
     align-items: center;
     width: 100%;
     /* box-shadow: inset 0px -1px 0px #C4C4C4; */
-    background: rgba(0, 0, 0, 0.1);
+    background-color: rgba(0, 0, 0, 0.1);
 }
 
 nav>ul{
@@ -491,22 +491,36 @@ div::-webkit-scrollbar-track{
     background: url("../images/homeImages/carousal2 1.png");
     position: relative;
     width: 100%;
-    height: 100vh;
+    height: 115vh;
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
 }
 
 .hero-second .glass-tint{
+    overflow: clip;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     height: 100%;
     top:auto;
     background: rgba(0, 0, 0, 0.8);
 }
 
+.hero-second .glass-tint>div:first-child{
+    position: relative;
+    top: 2em;
+    display:flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
 .hero-second .quote{
-    position: absolute;
-    top: 20vh;
-    left: 4vw;
+    height: 6em;
+    width: 50%;
+    position: relative;
+    /* top: 20vh;
+    left: 4vw; */
     font-family: var(--contentFont);
     font-weight: 300;
     color: white;
@@ -534,17 +548,17 @@ div::-webkit-scrollbar-track{
     display: flex;
     flex-direction: column;
     justify-content: end;
-    right: 4vw;
-    top:4vh;
+    /* right: 4vw;
+    top:4vh; */
     background-color: white;
     opacity: 0.9!important;
     width: 25em;
-    position: absolute;
+    position: relative;
     padding: 2em;
     border-radius: 10px;
     padding-top: 1em;
     overflow-wrap: break-word;
-    margin-top:-0.3
+    /* margin-top:-0.3 */
 }
 
 .mission-heading{
@@ -591,14 +605,13 @@ div::-webkit-scrollbar-track{
 /* core-values---------------------- */
 
 .core-values{
-
     opacity: 0.9!important;
     bottom: 0;
     width: 50%;
-    position: absolute;
+    position: relative;
     background-color: #ffffff;
     padding-top: 2em;
-    padding-right: 3em;
+    /* padding-right: 3em; */
     border-top-right-radius: 10px;
 }
 
@@ -627,7 +640,7 @@ div::-webkit-scrollbar-track{
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    /* width: 50%; */
+    padding-right:3em ;
 }
 
 .core-content .text1{
@@ -697,9 +710,6 @@ h2{
 .achievements-content .achievements-card{
     margin: 4.5vh 7vw;
     position: relative;
-    /* margin-left: 10vw; */
-    /* margin-bottom: 5vh; */
-    /* height: 6em; */
     width: 9em;
     background-color: white;
     box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.5), inset -1px 0px 0px #C4C4C4, inset 0px -1px 0px #C4C4C4, inset 1px 0px 0px #C4C4C4, inset 0px 1px 0px #C4C4C4;
@@ -857,7 +867,6 @@ iframe{
 }
 
 form span i.sent{
-    /* transform: scale(1.2,1.2); */
     transform:translateX(10vw);
     opacity: 0;
 }
@@ -868,7 +877,7 @@ textarea::-webkit-scrollbar{
 textarea::-webkit-scrollbar-thumb{
     background-color: var(--clr-dark);
     border-radius: 10px;
-    /* width: 2px; */
+
 }
 textarea::-webkit-scrollbar-track{
     background-color: #999999;
@@ -887,14 +896,6 @@ textarea::-webkit-scrollbar-track{
 
 /* responsive------------------------------ */
 
-@media only screen and (max-width: 1430px){
-
-
-.hero-second .quote{
-    width: 40em; 
-}
-
-}
 
 
 @media only screen and (max-width: 1125px){
@@ -934,11 +935,8 @@ textarea::-webkit-scrollbar-track{
     width: 30em;
 }
 
-.hero-second .quote{
-    top: 54vh;
-    left: 0;
-    right: 0;
-    width: auto;
+.hero-second{
+    height: 130vh;
 }
 
 .core-values{
@@ -948,10 +946,30 @@ textarea::-webkit-scrollbar-track{
 }
 
 
-@media only screen and (max-width: 1000px){
+@media only screen and (max-width: 1024px){
 
 .scroll-down{
     display: none;
+}
+
+.hero-second{
+    height: 75em;
+}
+
+.hero-second .glass-tint>div:first-child{
+    flex-direction: column;
+}
+
+.quote{
+    width: 80% !important;
+    order: 1;
+    margin-top: 8vw;
+}
+
+.mission{
+    padding-top: 2em;
+    right: 2em;
+    align-self: flex-end;
 }
 
 .achievements-content{
@@ -974,8 +992,23 @@ div.achievements-body{
 
 @media only screen and (max-width: 840px){
 
+.hero-second .glass-tint{
+    justify-content: space-around;
+}
+
+.mission{
+    align-self: auto;
+    right: auto;
+}
+
 .core-values{
     width: 88%;
+    border-radius: 10px;
+    align-self: center;
+}
+
+.core-values .text1{
+    border-bottom-left-radius: 10px;
 }
 
 .achievements .achievements-image img {
@@ -1017,30 +1050,34 @@ div.achievements-body{
     width: auto;
 }
 
-
-.hero-second .glass-tint{
-    display: flex;
-    justify-content: space-around;
-    flex-direction: column;
-    align-items: center;
+.core-values .core-heading {
+    margin-top: 0em;
+    margin-bottom: 1.5em;
 }
 
-.hero-second .quote {
-    height: 8em;
-    position: relative;
-    top: 0;
-    order: 1;
+
+.achievements .achievements-image img {
+    height: auto;
+    width: 70%;
 }
 
-.mission{
-    top:auto;
-    order: 0;
-    right: auto;
-    position: relative;
+.achievements h2 {
+    margin: 1.8em;
+    margin-top: 2.2em;
 }
 
-.mission-heading h2 {
-    margin: 0.7em 1.7em;
+
+}
+
+
+@media only screen and (max-width: 550px){
+
+.hero-second{
+    height: 85em;
+}
+
+.quote{
+    margin-top: 13vw;
 }
 
 .core-values{
@@ -1050,10 +1087,6 @@ div.achievements-body{
     border-radius: 15px;
     padding-right: 0;
     bottom: auto;
-}
-
-.core-values .left_line, .core-values .right_line {
-    height: 6.5vh;
 }
 
 .core-values .core-heading {
@@ -1082,29 +1115,26 @@ div.achievements-body{
     padding: 2em;
 }
 
-.achievements .achievements-image img {
-    height: auto;
-    width: 70%;
-}
-
-.achievements h2 {
-    margin: 1.8em;
-    margin-top: 2.2em;
-}
-
-
-}
-
-
-@media only screen and (max-width: 550px){
-
 .achievements-body>div, div.achievements-body{
     flex-direction: column;
 }
 
 }
 
-@media only screen and (max-width: 300px){
+
+@media only screen and (max-width: 420px){
+
+.mission{
+    width: 90%;
+}
+
+.core-values{
+    width: 90%;
+}
+    
+}
+
+@media only screen and (max-width: 336px){
 
 
 .heading{
@@ -1123,20 +1153,38 @@ div.achievements-body{
     text-align: center;
     padding-right: 3em;
 }
-    
+
+.hero-second{
+    height: 75em;
 }
 
-
-
-@media only screen and (max-width: 420px){
+.quote{
+    margin-top: 15vw;
+}
 
 .mission{
-    width: 90%;
+    padding-top: 1em;
+    margin:0.5em;
 }
 
-.core-values{
-    width: 90%;
+.mission-content{
+    font-size: 75%;
 }
+
+.core-values .core-heading {
+    margin-bottom: 0; 
+}
+
+.core-values .core-heading h2 {
+    margin-left: 0;
+    margin-right: 0;
+} 
+
+.core-values .text1, .core-values .text2 {
+    font-size: 75%
+}
+
+
 
 }
 
@@ -1144,45 +1192,19 @@ div.achievements-body{
 /* responsive with height -------------------------- */
 
 
-@media only screen and (max-height: 1180px) and (max-width: 720px){
-
-.hero-second{
-    height: 110vh;
-}
-    
-}
 
 
 @media only screen and (max-height: 1180px) and (max-width: 640px){
-
-.hero-second{
-    height: 140vh;
-}
-
 .abt_img>img {
     height: auto;
 }
 
 }
 
-@media only screen and (max-height: 740px) and (max-width: 540px){
 
-.hero-second{
-    height: 165vh;
-}
-    
-}
     
 
 @media only screen and (max-height: 740px) and (max-width: 420px){
-
-.hero-second{
-    height: 185vh;
-}
-
-.mission{
-    width: 90%;
-}
 
 .achievements h2 {
     font-size: 180%;
@@ -1190,37 +1212,6 @@ div.achievements-body{
 
 }
 
-@media only screen and (max-height: 740px) and (max-width: 300px){
-
-.hero-second{
-    height: 240vh;
-}
-
-.mission-content{
-    font-size: 75%;
-}
-
-.core-values .core-heading h2 {
-    margin-left: 0;
-    margin-right: 0;
-}
-
-}
-
-
-@media only screen and (max-height: 640px) and (max-width: 1150px){
-
-.hero-second .quote {
-    top: 90vh;
-}
-
-.hero-second{
-    height: 165vh;
-}
-
-
-
-}
 
 
 

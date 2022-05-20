@@ -1,23 +1,78 @@
+//scroll-navbar-----------------------------------------------------
+var about = document.getElementById("about");
+var aboutPos=about.offsetTop;
+
+var secondHero=document.getElementById("hero-second");
+var secondHeroPos=secondHero.offsetTop;
+
+var achievements=document.getElementById("achievements");
+var achievementsPos=achievements.offsetTop;
+
+var logo=document.getElementById("logo");
+
+
+$(window).on("scroll", function(){
+  var currentScrollPos = window.pageYOffset;
+  if((currentScrollPos>aboutPos && currentScrollPos<secondHeroPos) || currentScrollPos>achievementsPos){
+    $("nav").css({"background-color": "rgba(255, 255, 255, 0.8)",
+          "color": "black",
+          "box-shadow": "inset 0px -1px 0px #C4C4C4"});
+    logo.src="../images/homeImages/navlogo.png";
+    $(".bar1, .bar2, .bar3").css({
+        "background-color": "black"
+    });
+    $(".text-clr").css({
+      "color": "black"
+    });
+
+    // $("nav a").on("hover", function(){
+    //   $(this).css({
+    //     "color": "black"
+    //   });
+    // });
+  }
+
+  else{
+    $("nav").css({"background-color": "rgba(0, 0, 0, 0.1)",
+          "color": "white",
+          "box-shadow": "none"});
+    logo.src="../images/homeImages/3.ECELL_LOGO_WHITE_2.png";
+    $(".bar1, .bar2, .bar3").css({
+      "background-color": "#fff"
+    });
+    $(".text-clr").css({
+      "color": "var(--clr-light)"
+    });
+
+    // $("nav a").on("hover", function(){
+    //   $("nav a").css({
+    //     "color": "rgba(244, 227, 199,0.8)"
+    //   });
+    // });
+  }
+});
+
+
+
 // navbar--------------------------------------------------
 $('nav ul a').click(function(){
     $('.active').removeClass('active');
     $(this).addClass('active');
 });
 
-var prevScrollpos = window.pageYOffset;
-        window.onscroll = function() {
-            var currentScrollPos = window.pageYOffset;
-            console.log(currentScrollPos);
-            console.log(prevScrollpos);
-            if (prevScrollpos < currentScrollPos) {
-                $("nav").css("transform", "translateY(-100%)");
-            }
-            if (prevScrollpos > currentScrollPos) {
-                $("nav").css("transform", "translateY(0)");
-            }
-            prevScrollpos=currentScrollPos;
+// var prevScrollpos = window.pageYOffset;
+// window.onscroll = function() {
+//     var currentScrollPos = window.pageYOffset;
+//     console.log(currentScrollPos);
+//     if (prevScrollpos < currentScrollPos) {
+//         $("nav").css("transform", "translateY(-100%)");
+//     }
+//     if (prevScrollpos > currentScrollPos) {
+//         $("nav").css("transform", "translateY(0)");
+//     }
+//     prevScrollpos=currentScrollPos;
 
-        }
+// }
 
 
 // sent-contact-----------------------------------------------------

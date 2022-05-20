@@ -1,3 +1,5 @@
+
+
 // nav---------------------------------------
 
 
@@ -41,28 +43,28 @@ $(".u-poster").click(function(){
 
 // prev-posters----------------------------------------------------------
 
-$(".row1 .prev-poster").click(function(){
-    $(".row1 .prev-poster").css('animation-play-state', 'paused');
-    $(".row1 .select").removeClass("select");
-    $(this).addClass("select");
-    $(this).click(function(){
-        $(this).removeClass("select");
-        if($('.row1 .select').length==0){
-            $(".row1 .prev-poster").css('animation-play-state', 'running');
-        }
-    });
-})
+// $(".row1 .prev-poster").click(function(){
+//     $(".row1 .prev-poster").css('animation-play-state', 'paused');
+//     $(".row1 .select").removeClass("select");
+//     $(this).addClass("select");
+//     $(this).click(function(){
+//         $(this).removeClass("select");
+//         if($('.row1 .select').length==0){
+//             $(".row1 .prev-poster").css('animation-play-state', 'running');
+//         }
+//     });
+// })
 
-$(".row2 .prev-poster").click(function(){
-    $(".row2 .prev-poster").css('animation-play-state', 'paused');
-    $(".row2 .select").removeClass("select");
-    $(this).addClass("select");
-    $(this).click(function(){
-        $(this).removeClass("select");
-        if($('.row2 .select').length==0)
-            $(".row2 .prev-poster").css('animation-play-state', 'running');
-    });
-})
+// $(".row2 .prev-poster").click(function(){
+//     $(".row2 .prev-poster").css('animation-play-state', 'paused');
+//     $(".row2 .select").removeClass("select");
+//     $(this).addClass("select");
+//     $(this).click(function(){
+//         $(this).removeClass("select");
+//         if($('.row2 .select').length==0)
+//             $(".row2 .prev-poster").css('animation-play-state', 'running');
+//     });
+// })
 
 
 
